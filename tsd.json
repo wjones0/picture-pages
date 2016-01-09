@@ -1,0 +1,69 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "src/tsd.d.ts",
+  "installed": {
+    "express/express.d.ts": {
+      "commit": "8ea42cd8bb11863ed6f242d67c502288ebc45a7b"
+    },
+    "node/node.d.ts": {
+      "commit": "8ea42cd8bb11863ed6f242d67c502288ebc45a7b"
+    },
+    "serve-favicon/serve-favicon.d.ts": {
+      "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
+    },
+    "morgan/morgan.d.ts": {
+      "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
+    },
+    "cookie-parser/cookie-parser.d.ts": {
+      "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
+    },
+    "debug/debug.d.ts": {
+      "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "983126e131a2b81739053d60e4bbdbb46d6577b7"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "3d2916191781fe400176a030c03722ac4b87f1c1"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "fb2b3b1e068c9ff7d8f9b0851c08d37d96c95c38"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "fb2b3b1e068c9ff7d8f9b0851c08d37d96c95c38"
+    },
+    "mime/mime.d.ts": {
+      "commit": "8ea42cd8bb11863ed6f242d67c502288ebc45a7b"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "8ea42cd8bb11863ed6f242d67c502288ebc45a7b"
+    },
+    "passport/passport.d.ts": {
+      "commit": "8ea42cd8bb11863ed6f242d67c502288ebc45a7b"
+    },
+    "passport-local/passport-local.d.ts": {
+      "commit": "e5a27ea95e47b95333784f1f0d590127b4e39a89"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "e5a27ea95e47b95333784f1f0d590127b4e39a89"
+    },
+    "express-session/express-session.d.ts": {
+      "commit": "e5a27ea95e47b95333784f1f0d590127b4e39a89"
+    },
+    "passport-google-oauth/passport-google-oauth.d.ts": {
+      "commit": "8ea42cd8bb11863ed6f242d67c502288ebc45a7b"
+    },
+    "passport-facebook/passport-facebook.d.ts": {
+      "commit": "8ea42cd8bb11863ed6f242d67c502288ebc45a7b"
+    },
+    "passport-twitter/passport-twitter.d.ts": {
+      "commit": "8ea42cd8bb11863ed6f242d67c502288ebc45a7b"
+    }
+  }
+}
