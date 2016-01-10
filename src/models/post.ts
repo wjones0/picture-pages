@@ -6,6 +6,7 @@ var postSchema = mongoose.Schema({
 	screenname :String,
     picurl :String,
     date :Date,
+    caption: String,
     feature1: String,
     feature2: String,
     feature3: String
