@@ -1,7 +1,7 @@
 {
-  "name": "node-exp-ts-ang",
-  "description": "node-express-typescript-angular authentication Sample Application (TypeScript)",
-  "version": "0.0.0",
+  "name": "picture-pages server",
+  "description": "picture pages server",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./www.js",

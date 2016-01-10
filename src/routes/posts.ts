@@ -16,8 +16,9 @@ posts.get('/', function(req, res, next) {
 posts.post('/', function(req,res,next) {
    
    let newPost = new Post();
-   
+
    newPost.screenname = req.body.screenname;
+   newPost.caption = req.body.caption;
    newPost.picurl = req.body.picurl;
    newPost.date = req.body.date;
    newPost.feature1 = req.body.feature1;
