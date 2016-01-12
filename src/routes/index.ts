@@ -97,9 +97,10 @@ index.get('/api/userData', isLoggedInAjax, function(req, res) {
 });
 
 /* GET home page */
-//index.get('*', function(req, res) {
-	//res.sendFile(path.join(__dirname, '../public/views/index.html'));
-//});
+index.get('*', function(req, res) {
+    console.log('in index');
+	res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
 
 function isLoggedIn(req, res, next) {
