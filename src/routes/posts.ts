@@ -1,5 +1,6 @@
 var Post = require('../models/post');
 import {Router} from 'express';
+var xssFilters = require('xss-filters');
 
 const posts = Router();
 
@@ -17,13 +18,13 @@ posts.post('/', function(req,res,next) {
    
    let newPost = new Post();
 
-   newPost.screenname = req.body.screenname;
-   newPost.caption = req.body.caption;
-   newPost.picurl = req.body.picurl;
-   newPost.date = req.body.date;
-   newPost.feature1 = req.body.feature1;
-   newPost.feature2 = req.body.feature2;
-   newPost.feature3 = req.body.feature3;
+   newPost.screenname = xssFilters.inHTMLData(req.body.screenname);
+   newPost.caption = xssFilters.inHTMLData(req.body.caption);
+   newPost.picurl = xssFilters.inHTMLData(encodeURI(req.body.picurl));
+   newPost.date = xssFilters.inHTMLData(req.body.date);
+   newPost.feature1 = xssFilters.inHTMLData(req.body.feature1);
+   newPost.feature2 = xssFilters.inHTMLData(req.body.feature2);
+   newPost.feature3 = xssFilters.inHTMLData(req.body.feature3);
    
    newPost.save(function(err) {
             if (err)

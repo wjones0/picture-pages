@@ -1,5 +1,5 @@
 {
-  "name": "picture-pages server",
+  "name": "picture-pages-server",
   "description": "picture pages server",
   "version": "0.0.1",
   "private": true,
@@ -23,7 +23,8 @@
     "passport-google-oauth": "^0.2.0",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.3",
-    "serve-favicon": "~2.2.0"
+    "serve-favicon": "~2.2.0",
+    "xss-filters": "^1.2.6"
   },
   "devDependencies": {
     "browser-sync": "^2.8.2",
