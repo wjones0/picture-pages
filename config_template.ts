@@ -34,3 +34,8 @@ export class ConfigSession {
 	session_secret: string = '';
 }
 
+export class ConfigAmazonS3 {
+    access_key: string = 'abc';
+    secret_key: string = 'abc';
+    bucket: string = 'abc';
+}

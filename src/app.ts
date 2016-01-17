@@ -7,13 +7,15 @@ import {join} from 'path';
 import index from './routes/index';
 import users from './routes/users';
 import posts from './routes/posts';
+import awss3 from './routes/awss3';
 import cookieParser = require('cookie-parser'); // this module doesn't use the ES6 default export yet
 import path = require('path');
 
 // local file config
 import * as appAuthConfig from '../config/config';
 // process environment variable config
-//import * as appAuthConfig from './appconfig/config';
+// import * as appAuthConfig from './appconfig/config';
+
 
 import * as passport from 'passport';
 import * as passportAuth from './appconfig/passport';
@@ -58,6 +60,7 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/postapi',posts);
+app.use('/awsapi',awss3);
 app.use('/', index);
 app.use('/users', users);
 

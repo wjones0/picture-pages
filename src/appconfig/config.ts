@@ -34,3 +34,8 @@ export class ConfigSession {
 	session_secret: string = process.env.SESSION_SEC;
 }
 
+export class ConfigAmazonS3 {
+    access_key: string = process.env.AMAZONS3_ACCESS_KEY;
+    secret_key: string = process.env.AMAZONS3_SECRET_KEY;
+    bucket: string = process.env.AMAZONS3_BUCKET;
+}
