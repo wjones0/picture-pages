@@ -53,7 +53,7 @@ index.post('/login', function(req, res, next) {
 		});
 	})(req, res, next);
 });
-	
+
 // -------------  FACEBOOK -----------------------------
 index.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
 
@@ -61,9 +61,9 @@ index.get('/auth/facebook/callback',
 	passport.authenticate('facebook', {
 		successRedirect: '/profile',
 		failureRedirect: '/'
-	}));	
-	
-	
+	}));
+
+
 // ----------------- TWITTER ----------------------------
 index.get('/auth/twitter', passport.authenticate('twitter'));
 
@@ -73,8 +73,8 @@ index.get('/auth/twitter/callback',
 		failureRedirect: '/'
 	})
 );
-	
-	
+
+
 // ------------------ GOOGLE ----------------------------
 index.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
@@ -83,14 +83,14 @@ index.get('/auth/google/callback',
 		successRedirect: '/profile',
 		failureRedirect: '/'
 	}));
-	
-	
+
+
 // ------------ Logout   /logout -----------------------
 index.post('/logout', function(req, res) {
 	req.logout();
 	res.json({ redirect: '/' });
 });
-	
+
 // --------------  user data   /api/userData ---------------
 index.get('/api/userData', isLoggedInAjax, function(req, res) {
 	return res.json(req.user);
@@ -104,9 +104,9 @@ index.get('*', function(req, res) {
 
 
 function isLoggedIn(req, res, next) {
-	if (req.isAuthenticated())
+	if (req.isAuthenticated()) {
 		return next();
-
+    }
 	res.redirect('/');
 }
 
