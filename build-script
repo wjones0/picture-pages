@@ -1,0 +1,10 @@
+#!/bin/bash
+cd server
+gulp build-deploy
+cd ../client
+gulp build-deploy
+cd ../build
+git init
+git add *
+git commit -m 'build files'
+git archive --format=zip HEAD > ../build-x.x.x.zip

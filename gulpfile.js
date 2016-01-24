@@ -69,13 +69,13 @@ gulp.task('tscomp', function () {
         .pipe(gulp.dest(outputDir));
 });
 
-// // TypeScript build for /config folder
-var tsConfigConfig = tsb.create('src/tsconfig.json');
-gulp.task('buildConfig', function () {
-    // pipe in all necessary files
-    return gulp.src(['config/*.ts'])
-        .pipe(tsConfigConfig()) 
-        .pipe(gulp.dest('../config'));
+
+// TypeScript build for /src folder, pipes in .d.ts files from typings folder 
+var tsConfigDepSrc = tsb.create('src/tsconfig-deploy.json');
+gulp.task('tscomp-deploy', function () {
+    return gulp.src(['typings/**/*.ts', 'src/**/*.ts'])
+        .pipe(tsConfigDepSrc()) 
+        .pipe(gulp.dest(outputDir));
 });
 
 // package.json for server modules
@@ -98,9 +98,10 @@ gulp.task('package.json', function() {
 // // if a file change is detected, run the TypeScript or LESS compile gulp tasks
 gulp.task('watch', function () {
     gulp.watch('src/**/*.ts', ['tscomp']);
-    gulp.watch('config/*.ts', ['buildConfig']);
     //gulp.watch('tests/**/*.ts', ['buildTests']);
 }); 
 
-gulp.task('build', ['buildConfig','tscomp','package.json']);
+gulp.task('build', ['tscomp','package.json']);
+gulp.task('build-deploy', ['tscomp-deploy','package.json']);
+gulp.task('bd',['build-deploy']);
 gulp.task('default', ['build']);
