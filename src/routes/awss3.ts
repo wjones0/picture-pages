@@ -5,9 +5,7 @@ var randomstring = require("randomstring");
 
 
 // local file config
-import * as appAuthConfig from '../../config/config';
-// process environment variable config
-// import * as appAuthConfig from './appconfig/config';
+import * as appAuthConfig from '../appconfig/config';
 
 const configs : appAuthConfig.AuthConfigSecrets = new appAuthConfig.AuthConfigSecrets();
 

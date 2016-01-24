@@ -80,7 +80,7 @@ gulp.task('buildConfig', function () {
 
 // package.json for server modules
 gulp.task('package.json', function() {
-   return gulp.src(['package.json'])
+   return gulp.src(['package.json','.env','.gitignore'])
     .pipe(gulp.dest(outputDir)); 
 });
 

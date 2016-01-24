@@ -12,9 +12,7 @@ import cookieParser = require('cookie-parser'); // this module doesn't use the E
 import path = require('path');
 
 // local file config
-import * as appAuthConfig from '../config/config';
-// process environment variable config
-// import * as appAuthConfig from './appconfig/config';
+import * as appAuthConfig from './appconfig/config';
 
 
 import * as passport from 'passport';

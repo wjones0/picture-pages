@@ -5,6 +5,7 @@ export class AuthConfigSecrets {
 	google: AuthGoogle = new AuthGoogle();
 	mongodb: ConfigMongoDB = new ConfigMongoDB();
 	session: ConfigSession = new ConfigSession();
+    amazon: ConfigAmazonS3 = new ConfigAmazonS3();
 }
 
 export class AuthTwitter {
