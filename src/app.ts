@@ -15,8 +15,8 @@ import path = require('path');
 import * as appAuthConfig from './appconfig/config';
 
 
-import * as passport from 'passport';
-import * as passportAuth from './appconfig/passport';
+// import * as passport from 'passport';
+// import * as passportAuth from './appconfig/passport';
 
 
 const app: express.Express = express();
@@ -25,7 +25,7 @@ const configs : appAuthConfig.AuthConfigSecrets = new appAuthConfig.AuthConfigSe
 
 mongoose.connect(configs.mongodb.connection);
 
-const ppauth: passportAuth.PassportConfig = new passportAuth.PassportConfig(passport, configs);
+// const ppauth: passportAuth.PassportConfig = new passportAuth.PassportConfig(passport, configs);
 
 // view engine setup
 // app.set('views', join(__dirname, 'views'));
@@ -49,10 +49,10 @@ app.use(cookieParser());
 app.use(session({secret: configs.session.session_secret,
                   saveUninitialized: true,
                   resave: true}));
-app.use(passport.initialize());
+// app.use(passport.initialize());
 
 // persistent login sessions
-app.use(passport.session());
+// app.use(passport.session());
 
 
 app.use(express.static(path.join(__dirname, '/public')));

@@ -4,17 +4,41 @@ var xssFilters = require('xss-filters');
 
 const posts = Router();
 
+// get default page size
+var page_size = process.env.PAGE_SIZE || 10;
+
+
 /* GET posts listing. */
 posts.get('/', function(req, res, next) {
-    Post.find(function(err, postData) {
-        if (err) {
-            res.send(err);
-        }
+    Post.find({})
+        .sort('-_id')
+        .limit(page_size)
+        .exec(function(err, postData) {
+            if (err) {
+                res.send(err);
+            }
 
-        res.json(postData);
-    });
+            res.json(postData);
+        });
 });
 
+// get more posts
+posts.post('/more', function(req, res, next) {
+
+    Post.find({_id: { $lt: req.body.lastID } } )
+        .limit(page_size)
+        .sort( '-_id' )
+        .exec(function(err, postData) {
+            if (err) {
+                res.send(err);
+            }
+
+            res.json(postData);
+        });
+});
+
+
+// create a new post
 posts.post('/', function(req, res, next) {
 
    let newPost = new Post();

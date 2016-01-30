@@ -5,7 +5,7 @@ var TwitterStrategy = require('passport-twitter').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 var User = require('../models/user');
-import * as appAuthConfig from '../../config/config';
+import * as appAuthConfig from './config';
 
 
 
