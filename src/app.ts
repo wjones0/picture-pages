@@ -7,6 +7,7 @@ import {join} from 'path';
 import index from './routes/index';
 import users from './routes/users';
 import posts from './routes/posts';
+import lovs from './routes/lovs';
 import awss3 from './routes/awss3';
 import cookieParser = require('cookie-parser'); // this module doesn't use the ES6 default export yet
 import path = require('path');
@@ -58,6 +59,7 @@ app.use(session({secret: configs.session.session_secret,
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/postapi', posts);
+app.use('/lovapi', lovs);
 app.use('/awsapi', awss3);
 app.use('/', index);
 app.use('/users', users);

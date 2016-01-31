@@ -50,6 +50,9 @@ posts.post('/', function(req, res, next) {
    newPost.feature1 = xssFilters.inHTMLData(req.body.feature1);
    newPost.feature2 = xssFilters.inHTMLData(req.body.feature2);
    newPost.feature3 = xssFilters.inHTMLData(req.body.feature3);
+   newPost.yearEvent = xssFilters.inHTMLData(req.body.yearEvent);
+   newPost.region = xssFilters.inHTMLData(req.body.region);
+   newPost.state = xssFilters.inHTMLData(req.body.state);
 
    newPost.save(function(err) {
             if (err) {

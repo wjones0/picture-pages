@@ -9,7 +9,10 @@ var postSchema = mongoose.Schema({
     caption: String,
     feature1: String,
     feature2: String,
-    feature3: String
+    feature3: String,
+    yearEvent: Number,
+    region: String,
+    state: String,
 
 });
 
