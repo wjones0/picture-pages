@@ -9,8 +9,8 @@ var page_size = process.env.PAGE_SIZE || 10;
 
 
 /* GET posts listing. */
-posts.get('/', function(req, res, next) {
-    Post.find({})
+posts.post('/init', function(req, res, next) {
+    Post.find({ feature1: { $eq: req.body.feature1 } } )
         .sort('-_id')
         .limit(page_size)
         .exec(function(err, postData) {
@@ -25,7 +25,8 @@ posts.get('/', function(req, res, next) {
 // get more posts
 posts.post('/more', function(req, res, next) {
 
-    Post.find({_id: { $lt: req.body.lastID } } )
+    Post.find({_id: { $lt: req.body.lastID },
+               feature1: { $eq: req.body.feature1 } } )
         .limit(page_size)
         .sort( '-_id' )
         .exec(function(err, postData) {
